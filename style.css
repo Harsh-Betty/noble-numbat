@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  background-image: url('./assets/images/numbat_bg.jpeg');
+  background-size: cover;
+  margin: 0px;
+  overflow: hidden;
+  height: 100vh;
+  cursor: url('./assets/icons/cursor.svg'), default;
+  font-family: 'Ubuntu';
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.glass {
+  border-radius: 16px;
+  /* border: 1px solid rgba(255, 255, 255, 0.50); */
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.top-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  background: #333;
+  z-index: 9999;
+
+  .fas {
+    padding: 4px;
+  }
+}
+
+.content {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 15px;
+}
+
+.side-nav {
+  position: absolute;
+  left: 5;
+  top: 72;
+  width: 56px;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-bottom: 16px;
+
+      img {
+        height: 48px;
+        width: auto;
+        margin-left: -40px;
+      }
+    }
+  }
+}
+
+.desktop {
+  position: absolute;
+  top: 40px;
+  left: 72px;
+  width: calc(100% - 72px);
+  height: 100%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9998;
+  right: 5;
+  top: 40;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: none;
+
+  .modal-content {
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+
+    div {
+      margin-top: 20px;
+      margin-left: 20px;
+      font-weight: 100;
+    }
+  }
+}
+
+.modal-open {
+  animation: modalOpen 0.3s ease-in-out;
+  /* Opening animation */
+}
+
+.modal-close {
+  animation: modalClose 0.3s ease-in-out;
+  /* Closing animation */
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalClose {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.settings-list i {
+  margin-right: 16px;
+}
+
+/* Slider CSS */
+
+.slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 70%;
+  height: 8px;
+  border-radius: 4px;
+  background: #333;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  -webkit-transition: 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.github-modal {
+  display: none;
+  position: fixed;
+  z-index: 9997;
+  top: 100;
+  left: 300;
+  width: 800px;
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  .fa-close:hover,
+  .fa-close:focus {
+    cursor: pointer;
+  }
+
+  .modal-body {
+    position: relative;
+    top: 30;
+    background: rgba(51, 51, 51, 0.2);
+    height: 100%;
+
+    p:nth-child(1) {
+      margin-left: 10px;
+      padding-top: 10px;
+      font-weight: 600;
+    }
+  }
+}
+
+.output {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-family: 'Ubuntu Mono';
+  font-size: medium;
+}
+
+.input-line {
+  margin-left: 10px;
+}
+
+.input-line span {
+  font-family: 'Ubuntu Mono';
+  font-size: medium;
+  margin-right: 5px;
+}
+
+.input-line input {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-family: 'Ubuntu Mono';
+}

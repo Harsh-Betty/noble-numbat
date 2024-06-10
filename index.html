@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Ubuntu 24 | Noble Numbat</title>
+</head>
+
+<body>
+    <div class="top-nav">
+        <div class="content">
+            <p id="datetime" style="margin-right: 2%;"></p>
+            <div style="width: 100px; display: flex; justify-content: space-evenly;">
+                <i class="fas fa-wifi" id="openModalBtn"></i>
+                <i class="fas fa-volume-down"></i>
+                <i class="fas fa-battery-three-quarters"></i>
+            </div>
+        </div>
+    </div>
+    <div class="side-nav glass">
+        <ul>
+            <li><a href="#"><img src="./assets/icons/brave.svg" alt=""></a></li>
+            <li><a href="javascript:;" id="openGitHub"><img src="./assets/icons/github-desktop.svg" alt=""></a></li>
+            <li><a href="#"><img src="./assets/icons/blender.svg" alt=""></a></li>
+            <li><a href="#"><img src="./assets/icons/vscode.svg" alt=""></a></li>
+            <li><a href="#"><img src="./assets/icons/whatsapp.svg" alt=""></a></li>
+            <li><a href="#"><img src="./assets/icons/telegram.svg" alt=""></a></li>
+            <li><a href="#"><img src="./assets/icons/folder.svg" alt=""></a></li>
+            <li><a href="#"><img src="./assets/icons/wps.svg" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="desktop">
+        <img class="draggable" src="./assets/icons/user-home.svg" alt="" style="top: 80; left: 40;">
+    </div>
+    <div id="modal" class="modal glass">
+        <div class="modal-content" style="color: white;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <i class="fas fa-sun"></i>
+                <input type="range" min="10" max="100" value="80" class="slider" oninput="fun(this)">
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <i class="fas fa-headphones"></i>
+                <input type="range" min="0" max="100" value="40" class="slider">
+            </div>
+            <div style="display: flex; flex-direction: column;" class="settings-list">
+                <p><i class="fas fa-wifi"></i> Wi-Fi | Loki</p>
+                <p><i class="fa-brands fa-bluetooth"></i> Bluetooth</p>
+                <p><i class="fas fa-battery-empty"></i> Battery Saver</p>
+                <p><i class="fas fa-plane"></i> Airplane Mode</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GitHub Modal -->
+
+    <div id="github-modal" class="github-modal glass draggable">
+        <div class="modal-content" style="color: white;">
+            <div
+                style="width: 160px; display: flex; flex-direction: row-reverse; justify-content: space-evenly; align-items: center; position: absolute; right: -5; top: 15;">
+                <i class="fas fa-close" id="git-close"></i>
+                <i class="fa-regular fa-square"></i>
+                <i class="fas fa-minus"></i>
+            </div>
+            <div class="modal-body">
+                <p><span style="color: green;">harsh@Betty</span> <span style="color: purple;">MINGW64</span> <span
+                        style="color: yellow;">~</span></p>
+                <div class="output" id="output"></div>
+                <div class="input-line">
+                    <span>$</span>
+                    <input type="text" id="inputField" autofocus />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./drag.js"></script>
+    <script src="./terminal.js"></script>
+</body>
+
+</html>
